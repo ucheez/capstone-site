@@ -121,6 +121,22 @@ h2 {
 }
 
 /* =========================
+   RESULTS CONTAINER
+========================= */
+
+.results-divider {
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 16px;
+  padding: 80px 50px;
+  margin-bottom: 120px;
+}
+
+.results-divider h2 {
+  margin-top: 0;
+}
+
+/* =========================
    BUTTON
 ========================= */
 
