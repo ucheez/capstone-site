@@ -49,3 +49,7 @@ h2 {
   text-decoration: none;
   border-radius: 5px;
 }
+.plot-video {
+  margin-top: 20px;
+  border-radius: 10px;
+}
