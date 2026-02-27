@@ -20,6 +20,7 @@ html {
 ========================= */
 
 nav {
+   flex-wrap: wrap;
   position: fixed;
   top: 0;
   width: 100%;
@@ -41,19 +42,21 @@ nav h2 {
 
 nav ul {
   display: flex;
-  gap: 14px;
+  gap: 8px;              /* reduced spacing */
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;       /* prevents last button from being hidden */
 }
 
 nav a {
   color: #9ca3af;
   text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
+  padding: 6px 12px;      /* reduced horizontal padding */
+  border-radius: 18px;
+  font-size: 13px;        /* slightly smaller text */
   transition: all 0.3s ease;
+  white-space: nowrap;    /* prevents awkward wrapping */
 }
 
 nav a:hover {
@@ -258,4 +261,51 @@ h2 {
 .toggle-controls button:hover {
   background: linear-gradient(90deg, #38bdf8, #00ffc8);
   color: black;
+}
+
+/* Classification image styling */
+.classification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.classification-card {
+  text-align: center;
+  background: rgba(255,255,255,0.03);
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.classification-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.05);
+}
+
+.classification-card img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.classification-card h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+@media (max-width: 1100px) {
+  nav ul {
+    gap: 6px;
+  }
+
+  nav a {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
 }
