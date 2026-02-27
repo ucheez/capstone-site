@@ -1,44 +1,79 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================
-     ORIENTATION CHART
-  ========================= */
+   ORIENTATION DISTRIBUTION CHART
+========================= */
 
-  const ctx = document.getElementById("orientationChart");
+const distCtx = document.getElementById("orientationDistributionChart");
 
-  if (ctx) {
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["Horizontal", "Vertical", "Diagonal"],
-        datasets: [{
-          label: "Percentage (%)",
-          data: [43.46, 22.65, 33.90],
-          backgroundColor: [
-            "#38bdf8",
-            "#00ffc8",
-            "#7a5cff"
-          ],
-          borderRadius: 6
-        }]
+if (distCtx) {
+  new Chart(distCtx, {
+    type: "bar",
+    data: {
+      labels: ["Horizontal", "Diagonal", "Vertical"],
+      datasets: [{
+        label: "Percentage of Column-like Particles (%)",
+        data: [43.46, 33.90, 22.65],
+        backgroundColor: [
+          "#38bdf8",
+          "#7a5cff",
+          "#00ffc8"
+        ],
+        borderRadius: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      animation: {
+        duration: 1500
       },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            labels: { color: "#ffffff" }
+      plugins: {
+        title: {
+          display: true,
+          text: "Column-like Particle Orientation Distribution",
+          color: "#ffffff",
+          font: {
+            size: 18,
+            weight: "bold"
           }
         },
-        scales: {
-          x: { ticks: { color: "#ccc" } },
-          y: {
-            beginAtZero: true,
-            ticks: { color: "#ccc" }
+        legend: {
+          labels: { color: "#ffffff" }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.raw + "%";
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: "#ccc" }
+        },
+        y: {
+          beginAtZero: true,
+          max: 50,
+          title: {
+            display: true,
+            text: "Percentage of Column-like Particles (%)",
+            color: "#ffffff",
+            font: {
+              size: 14
+            }
+          },
+          ticks: {
+            color: "#ccc",
+            callback: function(value) {
+              return value + "%";
+            }
           }
         }
       }
-    });
-  }
+    }
+  });
+}
 
   /* =========================
      SCROLL REVEAL ANIMATION
