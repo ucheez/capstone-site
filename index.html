@@ -7,12 +7,14 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<div id="lightbox" class="lightbox">
-  <span id="closeLightbox">&times;</span>
-  <img id="lightboxImg">
-</div>
 
 <body>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span id="closeLightbox">&times;</span>
+    <img id="lightboxImg">
+  </div>
 
   <nav>
     <h2>Capstone Project</h2>
@@ -32,6 +34,7 @@
     <p>HVPS-3 Microphysics • Lightning Mapping • Orientation Analysis</p>
   </header>
 
+  <!-- Overview -->
   <section id="overview">
     <h2>Project Overview</h2>
     <p>
@@ -40,6 +43,7 @@
     </p>
   </section>
 
+  <!-- Data -->
   <section id="data">
     <h2>Data Sources</h2>
     <ul>
@@ -49,161 +53,113 @@
     </ul>
   </section>
 
+  <!-- Aircraft -->
   <section id="aircraft">
-  <h2>NRC Convair-580 Research Aircraft</h2>
-
-  <img src="assets/images/convair.jpg" class="full-img" alt="NRC Convair-580">
-
-  <p>
-    The NRC Convair-580 is a heavily instrumented atmospheric research aircraft
-    equipped with in-situ and remote sensing systems used for storm electrification
-    and cloud microphysics studies.
-  </p>
-</section>
-
-<section id="probes">
-  <h2>Optical Array Probes (2D-S & HVPS-3)</h2>
-
-  <div class="image-row">
-    <img src="assets/images/arrayprobe1.png">
-    <img src="assets/images/arrayprobe2.png">
-  </div>
-
-  <p>
-    The 2D-S probe captures high-resolution particle imagery for small
-    hydrometeors, while the HVPS-3 extends detection into the millimeter
-    regime for larger aggregates and graupel.
-  </p>
-</section>
-
-<section id="flight">
-  <h2>Aircraft Flight Path & Electrification Levels</h2>
-
-  <img src="assets/images/electrificationlevels.png" class="full-img">
-
-  <p>
-    Flight path colored by flash-rate classification:
-    Low (&lt;5 flashes/min), Elevated (5–10 flashes/min),
-    and High (&gt;10 flashes/min).
-  </p>
-</section>
-
-<section id="2ds-water">
-  <h2>2D-S IWC & LWC Time Series</h2>
-
-  <img src="assets/images/liquid_water_content.png" class="full-img">
-
-  <p>
-    Highly intermittent hydrometeor loading observed during
-    23:00–00:00 UTC, with sharp in-cloud bursts and extended low-activity intervals.
-  </p>
-</section>
-
-<section id="hvps-water">
-  <h2>HVPS-3 IWC & LWC Time Series</h2>
-
-  <img src="assets/images/hvps_water_content.png" class="full-img">
-
-  <p>
-    Large-particle bursts observed during mid-hour intervals,
-    consistent with aggregate/graupel presence.
-  </p>
-</section>
-
-<section id="psd">
-  <h2>Particle Size Distribution (2D-S Snapshot at 23:00)</h2>
-
-  <img src="assets/images/particle_size_distribution.png" class="full-img">
-
-  <p>
-    Number concentration dominated by small particles,
-    while mass is shifted toward larger diameters.
-  </p>
-</section>
-
-<section id="diameter">
-  <h2>Concentration & Diameter Time Series</h2>
-
-  <img src="assets/images/concentration_diameter_timeseries.png" class="full-img">
-
-  <p>
-    Strong divergence between number-weighted and mass-weighted
-    diameter statistics indicates skewed size distributions.
-  </p>
-</section>
-
-<section id="orientation-dist">
-  <h2>Column Orientation Distribution</h2>
-
-  <img src="assets/images/orientation_distribution.png" class="full-img">
-
-  <p>
-    Horizontal alignment represented 43.46% of column-like particles,
-    followed by diagonal (33.90%) and vertical (22.65%).
-  </p>
-</section>
-
-<section id="orientation-time">
-  <h2>Column Orientation Population Over Time</h2>
-
-  <p>
-    Toggle orientation categories to explore population variability across the 23:00–00:00 UTC window.
-  </p>
-
-  <div class="toggle-controls">
-    <button onclick="toggleImage('all')">All</button>
-    <button onclick="toggleImage('vertical')">Vertical</button>
-    <button onclick="toggleImage('horizontal')">Horizontal</button>
-    <button onclick="toggleImage('diagonal')">Diagonal</button>
-  </div>
-
-  <img id="orientationImg"
-       src="assets/images/orientation_timeseries.png"
-       class="full-img"
-       alt="Orientation Time Series">
-
-</section>
-
-<section id="examples">
-  <h2>Classification Examples</h2>
-
-  <div class="image-row">
-    <img src="assets/images/vertical.png">
-    <img src="assets/images/horizontal.png">
-    <img src="assets/images/diagonal.png">
-    <img src="assets/images/rejected.png">
-  </div>
-
-  <p>
-    Strict geometric filtering removes hollow, fragmented, and
-    non-elongated particles while preserving structurally coherent columns.
-  </p>
-</section>
-
-
-  <section id="pipeline">
-    <h2>Image Processing Pipeline</h2>
-    <p>Raw .nc → Particle Extraction → Feature Analysis → Orientation Classification → Lightning Correlation</p>
+    <h2>NRC Convair-580 Research Aircraft</h2>
+    <img src="assets/images/convair.jpg" class="full-img" alt="NRC Convair-580">
   </section>
 
+  <!-- Probes -->
+  <section id="probes">
+    <h2>Optical Array Probes (2D-S & HVPS-3)</h2>
+    <div class="image-row">
+      <img src="assets/images/arrayprobe1.png">
+      <img src="assets/images/arrayprobe2.png">
+    </div>
+  </section>
+
+  <!-- Flight Path -->
+  <section id="flight">
+    <h2>Aircraft Flight Path & Electrification Levels</h2>
+    <img src="assets/images/electrificationlevels.png" class="full-img">
+  </section>
+
+  <!-- 2D-S -->
+  <section id="2ds-water">
+    <h2>2D-S IWC & LWC Time Series</h2>
+    <img src="assets/images/liquid_water_content.png" class="full-img">
+  </section>
+
+  <!-- HVPS -->
+  <section id="hvps-water">
+    <h2>HVPS-3 IWC & LWC Time Series</h2>
+    <img src="assets/images/hvps_water_content.png" class="full-img">
+  </section>
+
+  <!-- PSD -->
+  <section id="psd">
+    <h2>Particle Size Distribution (2D-S Snapshot at 23:00)</h2>
+    <img src="assets/images/particle_size_distribution.png" class="full-img">
+  </section>
+
+  <!-- Concentration -->
+  <section id="diameter">
+    <h2>Concentration & Diameter Time Series</h2>
+    <img src="assets/images/concentration_and_diameter_time_series.png" class="full-img">
+  </section>
+
+  <!-- Orientation Distribution -->
+  <section id="orientation-dist">
+    <h2>Column Orientation Distribution</h2>
+    <img src="assets/images/distribution_of_column_like_particle_orientation.png" class="full-img">
+  </section>
+
+  <!-- Orientation Time -->
+  <section id="orientation-time">
+    <h2>Column Orientation Population Over Time</h2>
+
+    <div class="toggle-controls">
+      <button onclick="toggleImage('all')">All</button>
+      <button onclick="toggleImage('vertical')">Vertical</button>
+      <button onclick="toggleImage('horizontal')">Horizontal</button>
+      <button onclick="toggleImage('diagonal')">Diagonal</button>
+    </div>
+
+    <img id="orientationImg"
+         src="assets/images/Time_resolved_column_like_particle_counts_by_orientation.png"
+         class="full-img">
+  </section>
+
+  <!-- Classification Examples -->
+  <section id="examples">
+    <h2>Classification Examples</h2>
+    <div class="image-row">
+      <img src="assets/images/verticalcolumn.png">
+      <img src="assets/images/horizontal_column.png">
+      <img src="assets/images/diagonal_column.png">
+      <img src="assets/images/rejected_sample.png">
+    </div>
+  </section>
+
+  <!-- Pipeline -->
+  <section id="pipeline">
+    <h2>Image Processing Pipeline</h2>
+    <p>
+      Raw .nc → Particle Extraction → Feature Analysis → Orientation Classification → Lightning Correlation
+    </p>
+  </section>
+
+  <!-- Classification Chart -->
   <section id="classification">
     <h2>Column Orientation Classification</h2>
     <canvas id="orientationChart"></canvas>
   </section>
 
+  <!-- Lightning -->
   <section id="lightning">
     <h2>Lightning Correlation Results</h2>
     <p>Orientation distribution compared against flash rate evolution.</p>
   </section>
 
+  <!-- Video -->
   <section id="visualization">
     <h2>2D Flight Visualization</h2>
     <video controls width="100%" class="plot-video">
-  <source src="assets/videos/flight2D.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+      <source src="assets/videos/flight2D.mp4" type="video/mp4">
+    </video>
   </section>
 
+  <!-- Report -->
   <section id="report">
     <h2>Downloadable Mini Report</h2>
     <a href="assets/mini_report.pdf" class="button">Download PDF</a>

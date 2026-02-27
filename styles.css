@@ -114,3 +114,6 @@ html {
   color: white;
   cursor: pointer;
 }
+html {
+  scroll-padding-top: 100px;
+}
