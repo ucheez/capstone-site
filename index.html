@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atmospheric Electrification Capstone</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <nav>
+    <h2>Capstone Project</h2>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data">Data Sources</a></li>
+      <li><a href="#pipeline">Pipeline</a></li>
+      <li><a href="#classification">Classification</a></li>
+      <li><a href="#lightning">Lightning</a></li>
+      <li><a href="#visualization">3D Flight</a></li>
+      <li><a href="#report">Report</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Atmospheric Electrification Detection</h1>
+    <p>HVPS-3 Microphysics • Lightning Mapping • Orientation Analysis</p>
+  </header>
+
+  <section id="overview">
+    <h2>Project Overview</h2>
+    <p>
+      This project investigates atmospheric electrification using airborne microphysics
+      data (HVPS-3) and Lightning Mapping Array (HLMA) observations.
+    </p>
+  </section>
+
+  <section id="data">
+    <h2>Data Sources</h2>
+    <ul>
+      <li>HVPS-3 Particle Imaging</li>
+      <li>HLMA Lightning Data</li>
+      <li>F12 Aircraft Flight State Data</li>
+    </ul>
+  </section>
+
+  <section id="pipeline">
+    <h2>Image Processing Pipeline</h2>
+    <p>Raw .nc → Particle Extraction → Feature Analysis → Orientation Classification → Lightning Correlation</p>
+  </section>
+
+  <section id="classification">
+    <h2>Column Orientation Classification</h2>
+    <canvas id="orientationChart"></canvas>
+  </section>
+
+  <section id="lightning">
+    <h2>Lightning Correlation Results</h2>
+    <p>Orientation distribution compared against flash rate evolution.</p>
+  </section>
+
+  <section id="visualization">
+    <h2>3D Flight Visualization</h2>
+    <iframe src="assets/matlab/flight3d.html" width="100%" height="500px"></iframe>
+  </section>
+
+  <section id="report">
+    <h2>Downloadable Mini Report</h2>
+    <a href="assets/mini_report.pdf" class="button">Download PDF</a>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
