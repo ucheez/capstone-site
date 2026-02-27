@@ -350,3 +350,11 @@ h2 {
   width: 100% !important;
   max-width: 100%;
 }
+/* =========================
+   OVERVIEW PARAGRAPH INDENT
+========================= */
+
+#overview p {
+  text-indent: 40px;
+  margin-bottom: 20px;
+}
