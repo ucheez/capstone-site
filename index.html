@@ -16,33 +16,29 @@
     <img id="lightboxImg">
   </div>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h2>Atmospheric Electrification</h2>
-    <ul>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#data">Data Sources</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#pipeline">Pipeline</a></li>
-      <li><a href="#classification">Classification</a></li>
-      <li><a href="#lightning">Lightning</a></li>
-      <li><a href="#visualization">2D Flight</a></li>
-      <li><a href="#report">Report</a></li>
-    </ul>
-  </nav>
-
-  <!-- HEADER -->
+ <nav>
+  <h2>Atmospheric Electrification</h2>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#data">Data Sources</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#pipeline">Pipeline</a></li>
+    <li><a href="#classification">Classification</a></li>
+    <li><a href="#lightning">Lightning</a></li>
+    <li><a href="#visualization">2D Flight</a></li>
+    <li><a href="#report">Report</a></li>
+  </ul>
+</nav>
   <header>
-    <h1>Atmospheric Electrification Analysis</h1>
-    <p>
-      Integrated Microphysics • Lightning Mapping • Orientation Dynamics
-    </p>
-    <div class="header-subline">
-      • NRC Convair-580 • 2D-S & HVPS-3 •
-    </div>
-  </header>
-
-  <!-- OVERVIEW -->
+  <h1>Atmospheric Electrification Analysis</h1>
+  <p>
+    Integrated Microphysics • Lightning Mapping • Orientation Dynamics
+  </p>
+  <div class="header-subline">
+    •NRC Convair-580 • 2D-S & HVPS-3•
+  </div>
+</header>
+  <!-- Overview -->
   <section id="overview">
     <h2>Project Overview</h2>
     <p>
@@ -51,7 +47,7 @@
     </p>
   </section>
 
-  <!-- DATA SOURCES -->
+  <!-- Data -->
   <section id="data">
     <h2>Data Sources</h2>
     <ul>
@@ -61,150 +57,143 @@
     </ul>
   </section>
 
-  <!-- =========================
-       RESULTS SECTION
-  ========================= -->
+  <div class="results-divider">
+  <h2>Results & Analysis</h2>
 
-  <section id="results">
-    <div class="results-divider">
+  <!-- results -->
+  <section id="results" class="results-divider">
+  <h2>Results Overview</h2>
+  <p>
+    The following sections present processed outputs derived from synchronized
+    aircraft state parameters, microphysical probe measurements, and lightning
+    mapping array observations within the 23:00–00:00 UTC analysis window.
+  </p>
+</section>
 
-      <h2>Results & Analysis</h2>
+  <!-- Aircraft -->
+  <section id="aircraft">
+    <h2>NRC Convair-580 Research Aircraft</h2>
+    <img src="assets/images/convair.jpg" class="full-img" alt="NRC Convair-580">
+  </section>
 
-      <p>
-        The following sections present processed outputs derived from synchronized
-        aircraft state parameters, microphysical probe measurements, and lightning
-        mapping array observations within the 23:00–00:00 UTC analysis window.
-      </p>
-
-      <!-- Aircraft -->
-      <section id="aircraft">
-        <h3>NRC Convair-580 Research Aircraft</h3>
-        <img src="assets/images/convair.jpg" class="full-img" alt="NRC Convair-580">
-      </section>
-
-      <!-- Probes -->
-      <section id="probes">
-        <h3>Optical Array Probes (2D-S & HVPS-3)</h3>
-        <div class="image-row">
-          <img src="assets/images/arrayprobe1.png">
-          <img src="assets/images/arrayprobe2.png">
-        </div>
-      </section>
-
-      <!-- Flight -->
-      <section id="flight">
-        <h3>Aircraft Flight Path & Electrification Levels</h3>
-        <img src="assets/images/electrificationlevels.png" class="full-img">
-      </section>
-
-      <!-- 2D-S -->
-      <section id="2ds-water">
-        <h3>2D-S IWC & LWC Time Series</h3>
-        <img src="assets/images/liquid_water_content.png" class="full-img">
-      </section>
-
-      <!-- HVPS -->
-      <section id="hvps-water">
-        <h3>HVPS-3 IWC & LWC Time Series</h3>
-        <img src="assets/images/hvps_water_content.png" class="full-img">
-      </section>
-
-      <!-- PSD -->
-      <section id="psd">
-        <h3>Particle Size Distribution (2D-S Snapshot at 23:00)</h3>
-        <img src="assets/images/particle_size_distribution.png" class="full-img">
-      </section>
-
-      <!-- Diameter -->
-      <section id="diameter">
-        <h3>Concentration & Diameter Time Series</h3>
-        <img src="assets/images/concentration_and_diameter_time_series.png" class="full-img">
-      </section>
-
-      <!-- Orientation Distribution -->
-      <section id="orientation-dist">
-        <h3>Column Orientation Distribution</h3>
-        <img src="assets/images/distribution_of_column_like_particle_orientation.png" class="full-img">
-      </section>
-
-      <!-- Orientation Time -->
-      <section id="orientation-time">
-        <h3>Column Orientation Population Over Time</h3>
-
-        <div class="toggle-controls">
-          <button onclick="toggleImage('all')">All</button>
-          <button onclick="toggleImage('vertical')">Vertical</button>
-          <button onclick="toggleImage('horizontal')">Horizontal</button>
-          <button onclick="toggleImage('diagonal')">Diagonal</button>
-        </div>
-
-        <img id="orientationImg"
-             src="assets/images/Time_resolved_column_like_particle_counts_by_orientation.png"
-             class="full-img">
-      </section>
-
-      <!-- Classification Examples -->
-      <section id="examples">
-        <h3>Classification Examples</h3>
-
-        <div class="classification-grid">
-
-          <div class="classification-card">
-            <img src="assets/images/verticalcolumn.png" alt="Vertical Column">
-            <h4>Vertical Column</h4>
-          </div>
-
-          <div class="classification-card">
-            <img src="assets/images/horizontal_column.png" alt="Horizontal Column">
-            <h4>Horizontal Column</h4>
-          </div>
-
-          <div class="classification-card">
-            <img src="assets/images/diagonal_column.png" alt="Diagonal Column">
-            <h4>Diagonal Column</h4>
-          </div>
-
-          <div class="classification-card">
-            <img src="assets/images/rejected_sample.png" alt="Rejected Particle">
-            <h4>Rejected (Non-Column / Fragmented)</h4>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Pipeline -->
-      <section id="pipeline">
-        <h3>Image Processing Pipeline</h3>
-        <p>
-          Raw .nc → Particle Extraction → Feature Analysis →
-          Orientation Classification → Lightning Correlation
-        </p>
-      </section>
-
-      <!-- Classification Chart -->
-      <section id="classification">
-        <h3>Column Orientation Classification</h3>
-        <canvas id="orientationChart"></canvas>
-      </section>
-
-      <!-- Lightning -->
-      <section id="lightning">
-        <h3>Lightning Correlation Results</h3>
-        <p>Orientation distribution compared against flash rate evolution.</p>
-      </section>
-
-      <!-- Visualization -->
-      <section id="visualization">
-        <h3>2D Flight Visualization</h3>
-        <video controls width="100%" class="plot-video">
-          <source src="assets/videos/flight2D.mp4" type="video/mp4">
-        </video>
-      </section>
-
+  <!-- Probes -->
+  <section id="probes">
+    <h2>Optical Array Probes (2D-S & HVPS-3)</h2>
+    <div class="image-row">
+      <img src="assets/images/arrayprobe1.png">
+      <img src="assets/images/arrayprobe2.png">
     </div>
   </section>
 
-  <!-- REPORT (kept separate) -->
+  <!-- Flight Path -->
+  <section id="flight">
+    <h2>Aircraft Flight Path & Electrification Levels</h2>
+    <img src="assets/images/electrificationlevels.png" class="full-img">
+  </section>
+
+  <!-- 2D-S -->
+  <section id="2ds-water">
+    <h2>2D-S IWC & LWC Time Series</h2>
+    <img src="assets/images/liquid_water_content.png" class="full-img">
+  </section>
+
+  <!-- HVPS -->
+  <section id="hvps-water">
+    <h2>HVPS-3 IWC & LWC Time Series</h2>
+    <img src="assets/images/hvps_water_content.png" class="full-img">
+  </section>
+
+  <!-- PSD -->
+  <section id="psd">
+    <h2>Particle Size Distribution (2D-S Snapshot at 23:00)</h2>
+    <img src="assets/images/particle_size_distribution.png" class="full-img">
+  </section>
+
+  <!-- Concentration -->
+  <section id="diameter">
+    <h2>Concentration & Diameter Time Series</h2>
+    <img src="assets/images/concentration_and_diameter_time_series.png" class="full-img">
+  </section>
+
+  <!-- Orientation Distribution -->
+  <section id="orientation-dist">
+    <h2>Column Orientation Distribution</h2>
+    <img src="assets/images/distribution_of_column_like_particle_orientation.png" class="full-img">
+  </section>
+
+  <!-- Orientation Time -->
+  <section id="orientation-time">
+    <h2>Column Orientation Population Over Time</h2>
+
+    <div class="toggle-controls">
+      <button onclick="toggleImage('all')">All</button>
+      <button onclick="toggleImage('vertical')">Vertical</button>
+      <button onclick="toggleImage('horizontal')">Horizontal</button>
+      <button onclick="toggleImage('diagonal')">Diagonal</button>
+    </div>
+
+    <img id="orientationImg"
+         src="assets/images/Time_resolved_column_like_particle_counts_by_orientation.png"
+         class="full-img">
+  </section>
+
+  <!-- Classification Examples -->
+  <section id="examples">
+  <h2>Classification Examples</h2>
+
+  <div class="classification-grid">
+
+    <div class="classification-card">
+      <img src="assets/images/verticalcolumn.png" alt="Vertical Column">
+      <h4>Vertical Column</h4>
+    </div>
+
+    <div class="classification-card">
+      <img src="assets/images/horizontal_column.png" alt="Horizontal Column">
+      <h4>Horizontal Column</h4>
+    </div>
+
+    <div class="classification-card">
+      <img src="assets/images/diagonal_column.png" alt="Diagonal Column">
+      <h4>Diagonal Column</h4>
+    </div>
+
+    <div class="classification-card">
+      <img src="assets/images/rejected_sample.png" alt="Rejected Particle">
+      <h4>Rejected (Non-Column / Fragmented)</h4>
+    </div>
+
+  </div>
+</section>
+  <!-- Pipeline -->
+  <section id="pipeline">
+    <h2>Image Processing Pipeline</h2>
+    <p>
+      Raw .nc → Particle Extraction → Feature Analysis → Orientation Classification → Lightning Correlation
+    </p>
+  </section>
+
+  <!-- Classification Chart -->
+  <section id="classification">
+    <h2>Column Orientation Classification</h2>
+    <canvas id="orientationChart"></canvas>
+  </section>
+
+  <!-- Lightning -->
+  <section id="lightning">
+    <h2>Lightning Correlation Results</h2>
+    <p>Orientation distribution compared against flash rate evolution.</p>
+  </section>
+
+  <!-- Video -->
+  <section id="visualization">
+    <h2>2D Flight Visualization</h2>
+    <video controls width="100%" class="plot-video">
+      <source src="assets/videos/flight2D.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- Report -->
   <section id="report">
     <h2>Downloadable Mini Report</h2>
     <a href="assets/mini_report.pdf" class="button">Download PDF</a>
