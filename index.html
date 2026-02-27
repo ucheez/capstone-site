@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+<div id="lightbox" class="lightbox">
+  <span id="closeLightbox">&times;</span>
+  <img id="lightboxImg">
+</div>
 
 <body>
 
@@ -142,12 +146,22 @@
 <section id="orientation-time">
   <h2>Column Orientation Population Over Time</h2>
 
-  <img src="assets/images/orientation_timeseries.png" class="full-img">
-
   <p>
-    Orientation populations exhibit episodic bursts aligned
-    with intermittent hydrometeor loading events.
+    Toggle orientation categories to explore population variability across the 23:00–00:00 UTC window.
   </p>
+
+  <div class="toggle-controls">
+    <button onclick="toggleImage('all')">All</button>
+    <button onclick="toggleImage('vertical')">Vertical</button>
+    <button onclick="toggleImage('horizontal')">Horizontal</button>
+    <button onclick="toggleImage('diagonal')">Diagonal</button>
+  </div>
+
+  <img id="orientationImg"
+       src="assets/images/orientation_timeseries.png"
+       class="full-img"
+       alt="Orientation Time Series">
+
 </section>
 
 <section id="examples">

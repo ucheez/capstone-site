@@ -72,3 +72,45 @@ h2 {
   width: 220px;
   border-radius: 6px;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in animation */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.section-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+#closeLightbox {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
