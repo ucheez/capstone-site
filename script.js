@@ -61,38 +61,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-     ACTIVE NAVBAR HIGHLIGHT
-  ========================= */
+   ACTIVE NAVBAR HIGHLIGHT
+========================= */
 
-  window.addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
 
-    let currentSection = "";
+  const navLinks = document.querySelectorAll("nav a");
+  const sections = document.querySelectorAll("section[id]");
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      const sectionHeight = section.offsetHeight;
+  let currentSection = "";
 
-      if (
-        window.scrollY >= sectionTop &&
-        window.scrollY < sectionTop + sectionHeight
-      ) {
-        currentSection = section.getAttribute("id");
-      }
-    });
+  sections.forEach(section => {
 
-    // Fix for last section (bottom of page)
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
-      currentSection = sections[sections.length - 1].getAttribute("id");
+    const sectionTop = section.offsetTop - 120; // match navbar height
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      currentSection = section.id;
     }
 
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${currentSection}`) {
-        link.classList.add("active");
-      }
-    });
-
   });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + currentSection) {
+      link.classList.add("active");
+    }
+  });
+
+});
 
   /* =========================
      IMAGE ZOOM LIGHTBOX
