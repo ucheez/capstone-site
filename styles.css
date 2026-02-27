@@ -1,119 +1,261 @@
+/* =========================
+   GLOBAL
+========================= */
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #0f172a, #0b1120);
   color: white;
+  line-height: 1.6;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
 nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 8%;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  background: #111827;
-  position: sticky;
-  top: 0;
+  align-items: center;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  z-index: 1000;
+}
+
+nav h2 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 nav ul {
   display: flex;
-  gap: 20px;
+  gap: 14px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
-  color: #38bdf8;
+  color: #9ca3af;
   text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
+
+nav a:hover {
+  background: linear-gradient(90deg, #38bdf8, #00ffc8);
+  color: black;
+  transform: translateY(-2px);
+}
+
+nav a.active {
+  background: linear-gradient(90deg, #38bdf8, #00ffc8);
+  color: black;
+}
+
+/* =========================
+   HEADER / HERO
+========================= */
 
 header {
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to bottom, #0f172a, #1e293b);
+  padding: 160px 20px 120px 20px;
+  background: radial-gradient(circle at top, #1e293b 0%, #0f172a 70%);
 }
 
+header h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #38bdf8, #00ffc8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  font-size: 18px;
+  color: #9ca3af;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
 section {
-  padding: 60px 40px;
-  max-width: 1000px;
+  padding: 100px 40px;
+  max-width: 1100px;
   margin: auto;
 }
 
 h2 {
-  border-bottom: 2px solid #38bdf8;
-  padding-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  border-left: 4px solid #38bdf8;
+  padding-left: 12px;
 }
 
+/* =========================
+   BUTTON
+========================= */
+
 .button {
-  background: #38bdf8;
-  padding: 10px 20px;
+  display: inline-block;
+  background: linear-gradient(90deg, #38bdf8, #00ffc8);
+  padding: 12px 24px;
   color: black;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0,255,200,0.5);
+}
+
+/* =========================
+   VIDEO
+========================= */
+
 .plot-video {
   margin-top: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
+
+/* =========================
+   IMAGES
+========================= */
+
 .full-img {
   width: 100%;
-  max-width: 1000px;
   display: block;
-  margin: 30px auto;
-  border-radius: 8px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  transition: 0.3s ease;
+}
+
+.full-img:hover {
+  transform: scale(1.01);
 }
 
 .image-row {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
 .image-row img {
   width: 220px;
-  border-radius: 6px;
-}
-html {
-  scroll-behavior: smooth;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-/* Fade-in animation */
+.image-row img:hover {
+  transform: translateY(-6px);
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
 .section-hidden {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.8s ease-out;
+  transition: all 0.8s ease;
 }
 
 .section-show {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+/******** IMAGE ZOOM LIGHTBOX ********/
+
 .lightbox {
-  display: none;
   position: fixed;
-  z-index: 999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .lightbox img {
-  display: block;
-  margin: auto;
   max-width: 90%;
-  max-height: 80%;
+  max-height: 85%;
+  border-radius: 12px;
+  transform: scale(0.85);
+  transition: transform 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+
+.lightbox.active img {
+  transform: scale(1);
 }
 
 #closeLightbox {
   position: absolute;
-  top: 20px;
-  right: 40px;
+  top: 30px;
+  right: 50px;
   font-size: 40px;
   color: white;
   cursor: pointer;
 }
-html {
-  scroll-padding-top: 100px;
+
+/* =========================
+   TOGGLE BUTTONS
+========================= */
+
+.toggle-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.toggle-controls button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #1e293b;
+  color: #38bdf8;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.toggle-controls button:hover {
+  background: linear-gradient(90deg, #38bdf8, #00ffc8);
+  color: black;
 }
