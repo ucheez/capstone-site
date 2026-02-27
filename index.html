@@ -45,6 +45,128 @@
     </ul>
   </section>
 
+  <section id="aircraft">
+  <h2>NRC Convair-580 Research Aircraft</h2>
+
+  <img src="assets/images/convair.jpg" class="full-img" alt="NRC Convair-580">
+
+  <p>
+    The NRC Convair-580 is a heavily instrumented atmospheric research aircraft
+    equipped with in-situ and remote sensing systems used for storm electrification
+    and cloud microphysics studies.
+  </p>
+</section>
+
+<section id="probes">
+  <h2>Optical Array Probes (2D-S & HVPS-3)</h2>
+
+  <div class="image-row">
+    <img src="assets/images/arrayprobe1.png">
+    <img src="assets/images/arrayprobe2.png">
+  </div>
+
+  <p>
+    The 2D-S probe captures high-resolution particle imagery for small
+    hydrometeors, while the HVPS-3 extends detection into the millimeter
+    regime for larger aggregates and graupel.
+  </p>
+</section>
+
+<section id="flight">
+  <h2>Aircraft Flight Path & Electrification Levels</h2>
+
+  <img src="assets/images/electrificationlevels.png" class="full-img">
+
+  <p>
+    Flight path colored by flash-rate classification:
+    Low (&lt;5 flashes/min), Elevated (5–10 flashes/min),
+    and High (&gt;10 flashes/min).
+  </p>
+</section>
+
+<section id="2ds-water">
+  <h2>2D-S IWC & LWC Time Series</h2>
+
+  <img src="assets/images/liquid_water_content.png" class="full-img">
+
+  <p>
+    Highly intermittent hydrometeor loading observed during
+    23:00–00:00 UTC, with sharp in-cloud bursts and extended low-activity intervals.
+  </p>
+</section>
+
+<section id="hvps-water">
+  <h2>HVPS-3 IWC & LWC Time Series</h2>
+
+  <img src="assets/images/hvps_water_content.png" class="full-img">
+
+  <p>
+    Large-particle bursts observed during mid-hour intervals,
+    consistent with aggregate/graupel presence.
+  </p>
+</section>
+
+<section id="psd">
+  <h2>Particle Size Distribution (2D-S Snapshot at 23:00)</h2>
+
+  <img src="assets/images/particle_size_distribution.png" class="full-img">
+
+  <p>
+    Number concentration dominated by small particles,
+    while mass is shifted toward larger diameters.
+  </p>
+</section>
+
+<section id="diameter">
+  <h2>Concentration & Diameter Time Series</h2>
+
+  <img src="assets/images/concentration_diameter_timeseries.png" class="full-img">
+
+  <p>
+    Strong divergence between number-weighted and mass-weighted
+    diameter statistics indicates skewed size distributions.
+  </p>
+</section>
+
+<section id="orientation-dist">
+  <h2>Column Orientation Distribution</h2>
+
+  <img src="assets/images/orientation_distribution.png" class="full-img">
+
+  <p>
+    Horizontal alignment represented 43.46% of column-like particles,
+    followed by diagonal (33.90%) and vertical (22.65%).
+  </p>
+</section>
+
+<section id="orientation-time">
+  <h2>Column Orientation Population Over Time</h2>
+
+  <img src="assets/images/orientation_timeseries.png" class="full-img">
+
+  <p>
+    Orientation populations exhibit episodic bursts aligned
+    with intermittent hydrometeor loading events.
+  </p>
+</section>
+
+<section id="examples">
+  <h2>Classification Examples</h2>
+
+  <div class="image-row">
+    <img src="assets/images/vertical.png">
+    <img src="assets/images/horizontal.png">
+    <img src="assets/images/diagonal.png">
+    <img src="assets/images/rejected.png">
+  </div>
+
+  <p>
+    Strict geometric filtering removes hollow, fragmented, and
+    non-elongated particles while preserving structurally coherent columns.
+  </p>
+</section>
+
+
   <section id="pipeline">
     <h2>Image Processing Pipeline</h2>
     <p>Raw .nc → Particle Extraction → Feature Analysis → Orientation Classification → Lightning Correlation</p>

@@ -53,3 +53,22 @@ h2 {
   margin-top: 20px;
   border-radius: 10px;
 }
+.full-img {
+  width: 100%;
+  max-width: 1000px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 8px;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.image-row img {
+  width: 220px;
+  border-radius: 6px;
+}
