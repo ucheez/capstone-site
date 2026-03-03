@@ -40,6 +40,7 @@ nav h2 {
   font-weight: 700;
   letter-spacing: 1px;
   white-space: nowrap;
+  font-family: "Orbitron", sans-serif;
 }
 
 /* Right Menu */
@@ -84,10 +85,44 @@ nav a.active {
    HEADER / HERO
 ========================= */
 
+/* =========================
+   HEADER / HERO (LIGHTNING BACKGROUND)
+========================= */
+
 header {
+  position: relative;
   text-align: center;
   padding: 160px 20px 120px 20px;
-  background: radial-gradient(circle at top, #1e293b 0%, #0f172a 70%);
+  overflow: hidden;
+}
+
+/* Background image + dark overlay */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.7), rgba(11, 17, 32, 0.95)),
+    url("assets/images/lightning-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Subtle blue atmospheric glow */
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 10%, rgba(56, 189, 248, 0.25), transparent 55%);
+  z-index: 0;
+}
+
+/* Keep text above background */
+header * {
+  position: relative;
+  z-index: 1;
 }
 
 header h1 {
@@ -96,11 +131,13 @@ header h1 {
   background: linear-gradient(90deg, #38bdf8, #00ffc8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 1.5px;
 }
 
 header p {
   font-size: 18px;
-  color: #9ca3af;
+  color: #d1d5db;
 }
 
 /* =========================
