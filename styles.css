@@ -4,10 +4,19 @@
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(180deg, #0f172a, #0b1120);
+  font-family: "Inter", "Segoe UI", sans-serif;
   color: white;
   line-height: 1.6;
+
+  /* Storm/lightning theme background for the whole site */
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(11, 17, 32, 0.98)),
+    url("assets/images/thunderstorm.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 html {
@@ -23,7 +32,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  box-sizing: border-box;     /* 🔥 prevents overflow */
+  box-sizing: border-box;     /*  prevents overflow */
   padding: 18px 5%;
   display: flex;
   justify-content: space-between;
@@ -103,7 +112,7 @@ header::before {
   inset: 0;
   background:
     linear-gradient(180deg, rgba(15, 23, 42, 0.7), rgba(11, 17, 32, 0.95)),
-    url("assets/images/lightning-bg.jpg");
+    url("assets/images/lightning-bg.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
