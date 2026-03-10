@@ -19,17 +19,20 @@
   </div>
 
   <!-- NAVBAR -->
-  <nav>
-    <h2>Electrification Research</h2>
-    <ul>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#data">Data</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#pipeline">Pipeline</a></li>
-      <li><a href="#visualization">Flight</a></li>
-      <li><a href="#report">Report</a></li>
-    </ul>
-  </nav>
+ <nav>
+  <h2>Atmospheric Electrification</h2>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#data">Data</a></li>
+    <li><a href="#pipeline">Pipeline</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#eri">Electrification Index</a></li>
+    <li><a href="#visualization">Flight</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#report">Report</a></li>
+  </ul>
+</nav>
 
   <!-- HERO -->
   <header>
@@ -88,10 +91,60 @@
     </div>
   </section>
 
+  <section id="affiliations">
+  <h2>Institutional Collaboration</h2>
+
+  <p>
+    This research project is conducted in collaboration with the
+    <a href="https://nrc.canada.ca/en" target="_blank">
+      National Research Council Canada (NRC)
+    </a>
+    and the
+    <a href="https://carleton.ca" target="_blank">
+      Carleton University School of Information Technology
+    </a>.
+  </p>
+
+  <p>
+    The work integrates airborne microphysics observations, radar data,
+    and lightning mapping systems to investigate storm electrification
+    processes and develop predictive electrification indicators.
+  </p>
+</section>
+
   <!-- ================= RESULTS ================= -->
   <section id="results">
     <h2>Results & Microphysical Observations</h2>
   </section>
+
+  <section id="eri">
+
+<h2>Electrification Risk Index</h2>
+
+<p>
+
+The Electrification Risk Index (ERI) is an experimental indicator designed
+to quantify the likelihood of storm electrification using airborne
+microphysics observations, radar intensity, and lightning activity.
+
+</p>
+
+<p>
+
+The index combines several key variables including ice particle
+concentration, particle orientation statistics, liquid water content,
+and lightning flash rate to estimate electrification potential within
+convective regions.
+
+</p>
+
+<div class="eri-gauge">
+
+<canvas id="eriChart"></canvas>
+
+</div>
+
+</section>
 
   <!-- Flight Context -->
   <section>
@@ -187,6 +240,41 @@
     </video>
   </section>
 
+  <section id="team">
+
+<h2>Capstone Research Team</h2>
+
+<div class="team-grid">
+
+<div class="team-member">
+<img src="assets/images/leonid.jpg">
+<h4>Leonid Nichman</h4>
+</div>
+
+<div class="team-member">
+<img src="assets/images/zack.jpg">
+<h4>Zack Milani</h4>
+</div>
+
+<div class="team-member">
+<img src="assets/images/wendy.jpg">
+<h4>Wendy Olo</h4>
+</div>
+
+<div class="team-member">
+<img src="assets/images/daniel.jpg">
+<h4>Daniel Okorodudu</h4>
+</div>
+
+<div class="team-member">
+<img src="assets/images/uchenna.jpg">
+<h4>Uchenna Ezugworie</h4>
+</div>
+
+</div>
+
+</section>
+
   <!-- REPORT -->
   <section id="report">
     <h2>Downloadable Mini Report</h2>
@@ -195,3 +283,21 @@
 
   <script src="script.js"></script>
 </body>
+
+<section id="contact">
+
+<h2>Contact the Research Team</h2>
+
+<form action="https://formspree.io/f/mreypkde" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>

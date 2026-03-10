@@ -404,3 +404,62 @@ h2 {
   text-indent: 40px;
   margin-bottom: 20px;
 }
+
+.team-grid {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:40px;
+margin-top:40px;
+}
+
+.team-member{
+text-align:center;
+background:rgba(255,255,255,0.04);
+padding:20px;
+border-radius:14px;
+transition:0.3s;
+}
+
+.team-member:hover{
+transform:translateY(-6px);
+background:rgba(255,255,255,0.07);
+}
+
+.team-member img{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:12px;
+border:3px solid #38bdf8;
+}
+
+#contact form{
+display:flex;
+flex-direction:column;
+gap:18px;
+max-width:600px;
+margin-top:30px;
+}
+
+#contact input,
+#contact textarea{
+padding:12px;
+border-radius:8px;
+border:none;
+font-family:inherit;
+}
+
+#contact textarea{
+min-height:120px;
+resize:vertical;
+}
+
+#contact button{
+background:linear-gradient(90deg,#38bdf8,#00ffc8);
+border:none;
+padding:12px;
+border-radius:25px;
+cursor:pointer;
+font-weight:600;
+}
