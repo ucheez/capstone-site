@@ -65,22 +65,59 @@
 
 <!-- ERI (MAIN FEATURE) -->
 <section id="eri">
-  <h2>Electrification Risk Index</h2>
 
-  <p>
-    The Electrification Risk Index (ERI) is the primary output of this study,
-    combining microphysical observations and lightning activity into a unified
-    storm electrification indicator.
-  </p>
+<h2>Electrification Risk Index</h2>
 
-  <p>
-    The index integrates particle orientation, liquid water content, and flash
-    rate to estimate electrification potential within convective regions.
-  </p>
+<p>
+The Electrification Risk Index (ERI) quantifies storm electrification
+intensity by integrating microphysical properties, lightning activity,
+and atmospheric dynamics into a single normalized indicator.
+</p>
 
-  <div class="eri-gauge">
-    <canvas id="eriChart"></canvas>
-  </div>
+<p>
+Higher ERI values correspond to regions with increased charge separation
+potential, typically associated with strong updrafts, high ice particle
+concentrations, and elevated lightning flash rates.
+</p>
+
+<!-- ERI GAUGE -->
+<div class="eri-gauge">
+  <canvas id="eriChart"></canvas>
+</div>
+
+<p id="eriValue" style="text-align:center; font-size:18px; margin-top:10px;">
+  ERI: 0.42 (High)
+</p>
+
+<p><b>Classification:</b> Low (0–0.15) | Moderate (0.15–0.30) | High (>0.30)</p>
+
+<!-- ERI HEATMAP -->
+<h3>Spatial Electrification Risk Field</h3>
+<img src="assets/images/eri_heatmap.png" class="full-img">
+
+<!-- ERI TIMESERIES -->
+<h3>Temporal Evolution of Electrification</h3>
+<img src="assets/images/eri_timeseries.png" class="full-img">
+
+<!-- VIDEO -->
+<h3>Dynamic ERI Visualization</h3>
+<video controls width="100%" class="plot-video">
+  <source src="assets/videos/ERI_Animation.mp4" type="video/mp4">
+</video>
+
+<!-- INTERPRETATION -->
+<p>
+The ERI field highlights a concentrated region of elevated electrification
+coinciding with the storm core. The aircraft trajectory intersects this
+region during peak activity, where ERI values increase significantly.
+</p>
+
+<p>
+Time-series analysis shows a clear rise in electrification intensity
+during the mature stage of the storm, followed by a gradual decay as
+convective activity weakens.
+</p>
+
 </section>
 
 <!-- RESULTS -->

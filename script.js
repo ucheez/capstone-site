@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       data: {
         labels: ["Low", "Moderate", "High"],
         datasets: [{
-          data: [30, 40, 30], // update later with real data
+          data: [60, 25, 15], 
           backgroundColor: [
             "#38bdf8",
             "#facc15",
