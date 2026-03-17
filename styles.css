@@ -463,3 +463,46 @@ border-radius:25px;
 cursor:pointer;
 font-weight:600;
 }
+/* =========================
+   ERI GAUGE
+========================= */
+
+.eri-gauge {
+  max-width: 320px;
+  margin: 40px auto;
+}
+
+/* =========================
+   RESULT BLOCK SPACING
+========================= */
+
+.result-block {
+  margin-top: 50px;
+}
+
+/* =========================
+   CONTACT FORM POLISH
+========================= */
+
+#contact input,
+#contact textarea {
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* =========================
+   LINKS (NRC + CARLETON)
+========================= */
+
+a {
+  color: #38bdf8;
+}
+
+a:hover {
+  text-decoration: underline;
+}

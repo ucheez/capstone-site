@@ -1,86 +1,112 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================
-   ORIENTATION DISTRIBUTION CHART
+   ERI GAUGE
 ========================= */
 
-const distCtx = document.getElementById("orientationDistributionChart");
+  const eriCtx = document.getElementById("eriChart");
 
-if (distCtx) {
-  new Chart(distCtx, {
-    type: "bar",
-    data: {
-      labels: ["Horizontal", "Diagonal", "Vertical"],
-      datasets: [{
-        label: "Percentage of Column-like Particles (%)",
-        data: [43.46, 33.90, 22.65],
-        backgroundColor: [
-          "#38bdf8",
-          "#7a5cff",
-          "#00ffc8"
-        ],
-        borderRadius: 8
-      }]
-    },
-    options: {
-      responsive: true,
-      animation: {
-        duration: 1500
+  if (eriCtx) {
+    new Chart(eriCtx, {
+      type: "doughnut",
+      data: {
+        labels: ["Low", "Moderate", "High"],
+        datasets: [{
+          data: [30, 40, 30], // update later with real data
+          backgroundColor: [
+            "#38bdf8",
+            "#facc15",
+            "#ef4444"
+          ],
+          borderWidth: 0
+        }]
       },
-      plugins: {
-        title: {
-          display: true,
-          text: "Column-like Particle Orientation Distribution",
-          color: "#ffffff",
-          font: {
-            size: 18,
-            weight: "bold"
-          }
-        },
-        legend: {
-          labels: { color: "#ffffff" }
-        },
-        tooltip: {
-          callbacks: {
-            label: function(context) {
-              return context.raw + "%";
-            }
-          }
-        }
-      },
-      scales: {
-        x: {
-          ticks: { color: "#ccc" }
-        },
-        y: {
-          beginAtZero: true,
-          max: 50,
+      options: {
+        cutout: "70%",
+        responsive: true,
+        plugins: {
+          legend: { display: false },
           title: {
             display: true,
-            text: "Percentage of Column-like Particles (%)",
+            text: "Electrification Risk Level",
             color: "#ffffff",
-            font: {
-              size: 14
-            }
+            font: { size: 18 }
+          }
+        }
+      }
+    });
+  }
+
+  /* =========================
+   ORIENTATION DISTRIBUTION
+========================= */
+
+  const distCtx = document.getElementById("orientationDistributionChart");
+
+  if (distCtx) {
+    new Chart(distCtx, {
+      type: "bar",
+      data: {
+        labels: ["Horizontal", "Diagonal", "Vertical"],
+        datasets: [{
+          label: "Percentage of Column-like Particles (%)",
+          data: [43.46, 33.90, 22.65],
+          backgroundColor: [
+            "#38bdf8",
+            "#7a5cff",
+            "#00ffc8"
+          ],
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: { duration: 1500 },
+        plugins: {
+          title: {
+            display: true,
+            text: "Column-like Particle Orientation Distribution",
+            color: "#ffffff",
+            font: { size: 18, weight: "bold" }
           },
-          ticks: {
-            color: "#ccc",
-            callback: function(value) {
-              return value + "%";
+          legend: {
+            labels: { color: "#ffffff" }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.raw + "%";
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: "#ccc" }
+          },
+          y: {
+            beginAtZero: true,
+            max: 50,
+            title: {
+              display: true,
+              text: "Percentage of Column-like Particles (%)",
+              color: "#ffffff"
+            },
+            ticks: {
+              color: "#ccc",
+              callback: value => value + "%"
             }
           }
         }
       }
-    }
-  });
-}
+    });
+  }
 
   /* =========================
-     SCROLL REVEAL ANIMATION
-  ========================= */
+   SCROLL REVEAL
+========================= */
 
   const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav a");
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -96,43 +122,45 @@ if (distCtx) {
   });
 
   /* =========================
-   ACTIVE NAVBAR HIGHLIGHT
+   NAVBAR HIGHLIGHT (FIXED)
 ========================= */
 
-window.addEventListener("scroll", () => {
-
   const navLinks = document.querySelectorAll("nav a");
-  const sections = document.querySelectorAll("section[id]");
+  const navSections = document.querySelectorAll("section[id]");
 
-  let currentSection = "";
+  window.addEventListener("scroll", () => {
 
-  sections.forEach(section => {
+    let current = "";
 
-    const sectionTop = section.offsetTop - 120; // match navbar height
-    const sectionHeight = section.offsetHeight;
+    navSections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionHeight = section.offsetHeight;
 
-    if (
-      window.scrollY >= sectionTop &&
-      window.scrollY < sectionTop + sectionHeight
-    ) {
-      currentSection = section.id;
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight
+      ) {
+        current = section.id;
+      }
+    });
+
+    // Fix bottom edge case
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+      current = navSections[navSections.length - 1].id;
     }
 
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+
   });
-
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-
-    if (link.getAttribute("href") === "#" + currentSection) {
-      link.classList.add("active");
-    }
-  });
-
-});
 
   /* =========================
-     IMAGE ZOOM LIGHTBOX
-  ========================= */
+   LIGHTBOX
+========================= */
 
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightboxImg");
@@ -162,23 +190,3 @@ window.addEventListener("scroll", () => {
   }
 
 });
-
-
-/* =========================
-   ORIENTATION IMAGE TOGGLE
-========================= */
-
-function toggleImage(type) {
-  const img = document.getElementById("orientationImg");
-  if (!img) return;
-
-  if (type === "all") {
-    img.src = "assets/images/Time_resolved_column_like_particle_counts_by_orientation.png";
-  } else if (type === "vertical") {
-    img.src = "assets/images/verticalcolumn.png";
-  } else if (type === "horizontal") {
-    img.src = "assets/images/horizontal_column.png";
-  } else if (type === "diagonal") {
-    img.src = "assets/images/diagonal_column.png";
-  }
-}
