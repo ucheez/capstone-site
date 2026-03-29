@@ -1,136 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Atmospheric Electrification Capstone</title>
-<link rel="stylesheet" href="styles.css" />
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atmospheric Electrification Capstone</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
 
-<body>
+  <body>
 
-<div id="lightbox" class="lightbox">
-  <img id="lightboxImg">
-</div>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <img id="lightboxImg">
+  </div>
 
-<!-- NAVBAR -->
-<nav>
+  <!-- NAVBAR -->
+  <nav>
   <h2>Atmospheric Electrification</h2>
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#objectives">Objectives</a></li>
-    <li><a href="#eri">Electrification Risk Index</a></li>
-    <li><a href="#results">Observations</a></li>
-    <li><a href="#visualization">Flight</a></li>
-    <li><a href="#methodology">Methodology</a></li>
     <li><a href="#data">Data</a></li>
+    <li><a href="#eri">Electrification Risk Index</a></li>
+    <li><a href="#microphysics">Microphysics</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#report">Report</a></li>
   </ul>
 </nav>
 
-<header>
-  <h1>Atmospheric Electrification Analysis</h1>
-  <p>Integrated Microphysics • Lightning Mapping • Orientation Dynamics</p>
-</header>
+  <!-- HERO -->
+  <header>
+    <h1>Atmospheric Electrification Analysis</h1>
+    <p>Integrated Microphysics • Lightning Mapping • Orientation Dynamics</p>
+  </header>
 
-<!-- OVERVIEW -->
-<section id="overview">
-  <h2>Project Overview</h2>
-  <p>
-  This project presents a data-driven framework for analyzing atmospheric electrification using airborne microphysics, radar observations, and lightning activity.
-  </p>
-  <p>
-  The system integrates multiple datasets into a unified Electrification Risk Index (ERI) that quantifies storm intensity and charge separation potential.
-  </p>
-</section>
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <h2>Project Overview</h2>
 
-<!-- OBJECTIVES -->
-<section id="objectives">
+    <p>
+  This project presents a data-driven framework for analyzing atmospheric
+  electrification using airborne microphysics, radar observations, and
+  lightning activity. The system integrates multiple data sources into a
+  unified Electrification Risk Index (ERI) that quantifies storm intensity
+  and charge separation potential.
+  </p>
+
+  <p>
+  Using high-resolution particle imagery from optical array probes (2D-S
+  and HVPS-3), ice particle orientation and microphysical properties are
+  extracted and combined with lightning flash rates and atmospheric
+  dynamics to characterize electrified regions within convective storms.
+  </p>
+
+  <p>
+  The resulting ERI enables both spatial and temporal analysis of storm
+  electrification, highlighting high-risk regions and capturing the
+  evolution of electrical activity throughout the storm lifecycle.
+  </p>
+
+  <p>
+  This platform serves as both a visualization tool and an analytical
+  framework, demonstrating how microphysical observations can be directly
+  linked to lightning behavior and used to estimate electrification risk
+  in real time.
+  </p>
+  </section>
+
+  <section id="objectives">
   <h2>Project Objectives</h2>
+
   <p>
-    Analysis and fusion of synchronized datasets to test the hypothesis that atmospheric electric fields influence the alignment and shape of cloud ice crystals.
+    This project focuses on the analysis and fusion of synchronized atmospheric datasets
+    to investigate the role of electric fields in convective storms.
   </p>
+
   <p>
-    Identify microphysical indicators that can be used in early warning systems for lightning hazards.
+    The primary objective is to test the hypothesis that atmospheric electric fields
+    influence the alignment and morphology of cloud ice crystals.
+  </p>
+
+  <p>
+    By linking microphysical observations with lightning activity, this study aims to
+    identify measurable indicators of electrification that can support the development
+    of early warning systems for lightning hazards.
   </p>
 </section>
 
-<!-- ERI -->
-<section id="eri">
-  <h2>Electrification Risk Index</h2>
-
-  <div class="eri-gauge">
-    <canvas id="eriChart"></canvas>
-  </div>
-
-  <p id="eriValue" style="text-align:center;">
-    Peak ERI (Storm Core): 0.42 — High Electrification
-  </p>
-
-  <h3>Spatial Electrification Risk Field</h3>
-  <img src="assets/images/eri_heatmap.png" class="full-img">
-
-  <h3>Temporal Evolution of Electrification</h3>
-  <img src="assets/images/eri_timeseries.png" class="full-img">
-</section>
-
-<!-- RESULTS -->
-<section id="results">
-  <h2>Observational Results</h2>
-
-  <!-- Storm Dynamics -->
-  <div class="result-block">
-    <h3>Storm Dynamics and Particle Behavior Over Time</h3>
-    <img src="assets/images/storm_dynamics.png" class="full-img">
-  </div>
-
-  <!-- Orientation Distribution -->
-  <div class="result-block">
-    <h3>Column Orientation Distribution</h3>
-    <div class="chart-container">
-      <canvas id="orientationDistributionChart"></canvas>
-    </div>
-  </div>
-
-  <!-- Orientation vs Electrification -->
-  <div class="result-block">
-    <h3>Particle Orientation Under Different Electrification Levels</h3>
-    <img src="assets/images/orientation_vs_lightning.png" class="full-img">
-  </div>
-
-</section>
-
-<!-- FLIGHT -->
-<section id="visualization">
-  <h2>2D Flight Visualization</h2>
-  <video controls width="100%" class="plot-video">
-    <source src="assets/videos/flight2D.mp4" type="video/mp4">
-  </video>
-</section>
-
-<!-- METHODOLOGY -->
-<section id="methodology">
-  <h2>Methodology</h2>
-
-  <h3>Particle Reconstruction and Orientation Classification</h3>
-  <img src="assets/images/orientation_diagram.png" class="full-img">
-
-  <h3>Processing Pipeline</h3>
-  <img src="assets/images/particle_pipeline.png" class="full-img">
-
-  <p style="text-align:center;">
-    ERI = w₁·Flash + w₂·Size + w₃·Reflectivity + w₄·Updraft + w₅·LWC
-  </p>
-</section>
-
-<!-- DATA -->
-<section id="data">
+ <!-- DATA -->
+  <section id="data">
   <h2>Data Sources & Instrumentation</h2>
 
   <p>
@@ -139,67 +102,266 @@
     research aircraft.
   </p>
 
-  <!-- PROBE DATA -->
-  <h3>Optical Array Probes (2D-S & HVPS-3)</h3>
+  <h3>Airborne Microphysics (2D-S & HVPS-3)</h3>
   <p>
     High-resolution particle imagery is captured using optical array probes,
     enabling analysis of particle size, shape, and orientation.
   </p>
-
   <div class="image-row">
     <img src="assets/images/arrayprobe1.png">
     <img src="assets/images/arrayprobe2.png">
   </div>
 
-  <!-- LIGHTNING -->
   <h3>Lightning Mapping Array (HLMA)</h3>
   <p>
     Lightning activity is obtained from the Houston Lightning Mapping Array,
     providing spatial and temporal information on flash events.
   </p>
 
-  <!-- RADAR -->
   <h3>Radar Reflectivity</h3>
   <p>
-    Radar data is used to characterize storm intensity and precipitation structure.
+    Radar data is used to characterize storm intensity and precipitation
+    structure through reflectivity measurements.
   </p>
 
-  <!-- AIRCRAFT -->
   <h3>Aircraft State Parameters</h3>
   <p>
     Aircraft measurements include altitude, temperature, liquid water content,
-    and vertical wind (updraft).
+    and vertical wind (updraft), enabling detailed analysis of storm dynamics.
   </p>
 
-  <!-- PLATFORM -->
   <h3>Research Platform</h3>
   <img src="assets/images/convair.jpg" class="full-img">
 </section>
 
-<!-- TEAM -->
+<!-- ERI (MAIN FEATURE) -->
+<section id="eri">
+
+<h2>Electrification Risk Index</h2>
+
+<p>
+The Electrification Risk Index (ERI) quantifies storm electrification
+intensity by integrating microphysical properties, lightning activity,
+and atmospheric dynamics into a single normalized indicator.
+</p>
+
+<p>
+Higher ERI values correspond to regions with increased charge separation
+potential, typically associated with strong updrafts, high ice particle
+concentrations, and elevated lightning flash rates.
+</p>
+
+<!-- ERI GAUGE -->
+<div class="eri-gauge">
+  <canvas id="eriChart"></canvas>
+</div>
+
+<p id="eriValue" style="text-align:center; font-size:18px; margin-top:10px;">
+  Peak ERI (Storm Core): 0.42 — High Electrification
+</p>
+
+<p style="text-align:center; color:#9ca3af; font-size:14px;">
+  Current ERI at aircraft position: 0.04 (Low)
+</p>
+
+<p><b>Classification:</b> Low (0–0.15) | Moderate (0.15–0.30) | High (>0.30)</p>
+
+<!-- HEATMAP -->
+<h3>Spatial Electrification Risk Field</h3>
+<img src="assets/images/eri_heatmap.png" class="full-img">
+
+<!-- TIMESERIES -->
+<h3>Temporal Evolution of Electrification</h3>
+<img src="assets/images/eri_timeseries.png" class="full-img">
+
+<!-- VIDEO -->
+<h3>Dynamic ERI Visualization</h3>
+<video controls width="100%" class="plot-video">
+  <source src="assets/videos/ERI_Animation.mp4" type="video/mp4">
+</video>
+
+<!-- INTERPRETATION -->
+<p>
+The ERI field highlights a concentrated region of elevated electrification
+coinciding with the storm core. The aircraft trajectory intersects this
+region during peak activity, where ERI values increase significantly.
+</p>
+
+<p>
+Time-series analysis shows a clear rise in electrification intensity
+during the mature stage of the storm, followed by a gradual decay as
+convective activity weakens.
+</p>
+
+
+<h2>ERI Pipeline</h2>
+
+<p>
+  The methodology integrates multiple data sources into a unified analysis
+  pipeline to quantify storm electrification and analyze particle behavior.
+</p>
+
+<h3>Electrification Risk Index (ERI) Pipeline</h3>
+
+<p>
+  Key storm indicators are extracted and combined to compute the ERI:
+</p>
+
+<ul>
+  <li>Lightning Flash Rate</li>
+  <li>Particle Size / Ice Water Content</li>
+  <li>Radar Reflectivity</li>
+  <li>Updraft Velocity</li>
+  <li>Liquid Water Content</li>
+</ul>
+
+<p>
+  Each feature is normalized and combined using a weighted sum to produce
+  a time-resolved electrification risk indicator.
+</p>
+
+<p style="text-align:center; font-size:18px;">
+  ERI = w₁·Flash + w₂·Size + w₃·Reflectivity + w₄·Updraft + w₅·LWC
+</p>
+
+</section>
+
+<section id="microphysics">
+
+<h2>Microphysical Analysis</h2>
+
+<p>
+Following the identification of electrified regions using the Electrification Risk Index (ERI),
+microphysical analysis is performed to investigate particle behavior within the storm.
+</p>
+
+<p>
+This analysis focuses on particle shape, size, and orientation, with particular attention
+to how electric fields influence alignment during periods of high lightning activity.
+</p>
+
+<!-- ORIENTATION THEORY -->
+<h3>Particle Orientation Estimation</h3>
+
+<p>
+Particle orientation is determined by fitting an ellipse to each detected particle,
+where the major axis defines the orientation angle relative to the horizontal axis.
+</p>
+
+<img src="assets/images/orientation_diagram.png" class="full-img">
+
+<!-- PIPELINE -->
+<h3>Image Processing and Classification Pipeline</h3>
+
+<p>
+Raw probe data is processed through a structured pipeline involving image reconstruction,
+binary segmentation, contour extraction, and ellipse fitting. This enables classification
+of particle orientation into horizontal, vertical, and diagonal categories.
+</p>
+
+<img src="assets/images/particle_pipeline.png" class="full-img">
+
+<!-- DYNAMICS -->
+<h3>Storm Microphysics and Lightning Interaction</h3>
+
+<img src="assets/images/storm_dynamics.png" class="full-img">
+
+<!-- ORIENTATION RESULT -->
+<h3>Orientation Distribution Under Electrification</h3>
+
+<img src="assets/images/orientation_vs_lightning.png" class="full-img">
+
+<p>
+Results show a clear shift in particle orientation under high electrification conditions,
+with increased vertical alignment and reduced horizontal alignment, suggesting
+a direct influence of electric fields on particle behavior.
+</p>
+
+<!-- EXISTING CHART -->
+<div class="result-block">
+  <h3>Column Orientation Distribution</h3>
+  <div class="chart-container">
+    <canvas id="orientationDistributionChart"></canvas>
+  </div>
+</div>
+
+</section>
+
+ 
+
+  <!-- AFFILIATIONS -->
+  <section id="affiliations">
+    <h2>Institutional Collaboration</h2>
+
+    <p>
+      Collaboration with
+      <a href="https://nrc.canada.ca/en" target="_blank">NRC Canada</a>
+      and
+      <a href="https://carleton.ca" target="_blank">Carleton University</a>.
+    </p>
+  </section>
+
+ <!-- TEAM -->
 <section id="team">
   <h2>Capstone Research Team</h2>
-  <p>Wendy Olo • Uchenna Ezugworie • Daniel Okorodudu</p>
+
+  <!-- TEAM MEMBERS -->
+  <h3>Team Members</h3>
+  <div class="team-grid">
+
+    <div class="team-member">
+      <h4>Uchenna Ezugworie</h4>
+    </div>
+
+    <div class="team-member">
+      <h4>Wendy Olo</h4>
+    </div>
+
+    <div class="team-member">
+      <h4>Daniel Okorodudu</h4>
+    </div>
+
+  </div>
+
+  <!-- ADVISORS -->
+  <h3>Advisors</h3>
+  <div class="team-grid">
+
+    <div class="team-member">
+      <h4>Leonid Nichman</h4>
+    </div>
+
+    <div class="team-member">
+      <h4>Zack Milani</h4>
+    </div>
+
+    <div class="team-member">
+      <h4>Marzieh Amini</h4>
+    </div>
+
+  </div>
+
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact the Research Team</h2>
-  <form action="https://formspree.io/f/mreypkde" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact the Research Team</h2>
 
-<!-- REPORT -->
-<section id="report">
-  <h2>Downloadable Mini Report</h2>
-  <a href="assets/mini_report.pdf" class="button">Download PDF</a>
-</section>
+    <form action="https://formspree.io/f/mreypkde" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-<script src="script.js"></script>
+  <!-- REPORT -->
+  <section id="report">
+    <h2>Downloadable Mini Report</h2>
+    <a href="assets/mini_report.pdf" class="button">Download PDF</a>
+  </section>
 
-</body>
-</html>
+  <script src="script.js"></script>
+
+  </body>
+  </html>
